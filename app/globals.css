@@ -2,32 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .font-condensed {
+    font-stretch: condensed;
   }
+}
+
+@keyframes typing {
+  0% {content: "j";}
+  4% {content: "ju";}
+  8% {content: "jus";}
+  12% {content: "just";}
+  16% {content: "just ";}
+  20% {content: "just h";}
+  24% {content: "just ha";}
+  28% {content: "just han";}
+  32% {content: "just hang";}
+  36% {content: "just hang ";}
+  40% {content: "just hang i";}
+  44% {content: "just hang in";}
+  48% {content: "just hang in ";}
+  52% {content: "just hang in t";}
+  56% {content: "just hang in th";}
+  60% {content: "just hang in the";}
+  64% {content: "just hang in ther";}
+  68% {content: "just hang in there";}
+  72% {content: "just hang in there ";}
+  76% {content: "just hang in there o";}
+  80% {content: "just hang in there ok";}
+  84% {content: "just hang in there ok.";}
+  88% {content: "just hang in there ok..";}
+  92% {content: "just hang in there ok...";}
+  96% {content: "just hang in there ok....";}
+  100% {content: "just hang in there ok.....";}
+}
+
+.processing::after {
+  content: "";
+  animation: typing 4s ease-in infinite
 }
