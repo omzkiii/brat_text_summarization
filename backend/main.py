@@ -14,7 +14,6 @@ CORS(app)
 @app.route('/process', methods=['POST'])
 def process():
     url = request.json['url']
-    # url = "facebook.com"
     print("HELLO")
     try:
         print("Success")
@@ -25,10 +24,6 @@ def process():
     except Exception as e:
         print("ERROR: ", e)
         return jsonify(e), 500
-    # result = "BOBO"
-    # return jsonify(summarized), 200
-    # return jsonify(result), 200
-    print(summarized)
 
 
 def fetch_text_from_url(url):
@@ -48,7 +43,7 @@ def summary(url):
         stemmer = Stemmer("english")
         summarizer = LsaSummarizer(stemmer)
         summarizer.stop_words = get_stop_words("english")
-        summary_sentences = summarizer(parser.document, 3)  # 3 is the number of sentences in the summary
+        summary_sentences = summarizer(parser.document, 5)
         summarized = ' '.join(str(sentence) for sentence in summary_sentences)
         return summarized
     except Exception as e:
@@ -57,5 +52,4 @@ def summary(url):
 
 if __name__ == "__main__":
     app.run(debug=True)
-    # process()
     
