@@ -32,7 +32,6 @@ export default function Home() {
       else{
         alert(text)
       }
-
     }
   }
   function validURL(str) {
@@ -47,8 +46,9 @@ export default function Home() {
 
   return (
     <main className="flex flex-col bg-brat">
-      <div className="content-center p-5 pt-32 pb-9 bg-brat font-arial text-9xl tracking-tighter font-light scale-x-75 text-black">
+      <div className="flex scale-x-75 content-center p-5 pt-32 pb-9 bg-brat font-arial text-9xl tracking-tighter font-light text-black">
         <h1> summarize any text</h1>
+        <div className="justify-end" id="image"></div>
       </div>
       {!isSubmitted ? (
         <div className="flex justify-items-center justify-center py-20">
@@ -59,10 +59,8 @@ export default function Home() {
               onChange={(e) => setUrl(e.target.value)} value = {url}></input>
             <button 
               onClick={handleSubmit}
-
               className="bg-white text-black text-4xl px-6 py-4 hover:bg-gray-200 transition-colors scale-x-75"
-              type="submit"
-            >
+              type="submit">
               summarize
             </button>
           </form>

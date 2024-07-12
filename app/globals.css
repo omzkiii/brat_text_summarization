@@ -8,6 +8,15 @@
   }
 }
 
+#image {
+  background-image: url("./charli.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 50px;
+  width: 400px;
+  height: 200px;
+}
+
 @keyframes typing {
   0% {content: "j";}
   4% {content: "ju";}
